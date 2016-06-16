@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15F34" minimumToolsVersion="Automatic">
+    <entity name="Exercise" representedClassName=".Exercise" syncable="YES">
+        <attribute name="exerciseDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="exerciseName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="exerciseWorkoutName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="ExerciseSet" representedClassName=".ExerciseSet" syncable="YES">
+        <attribute name="exerciseDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="exerciseName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="exerciseRep" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="exerciseSetNumber" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="exerciseWeight" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="exerciseWorkoutName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Workout" representedClassName=".Workout" syncable="YES">
+        <attribute name="workoutColorTag" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="workoutDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="workoutName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Exercise" positionX="-36" positionY="9" width="128" height="90"/>
+        <element name="ExerciseSet" positionX="-54" positionY="-9" width="128" height="135"/>
+        <element name="Workout" positionX="-63" positionY="-18" width="128" height="90"/>
+    </elements>
+</model>

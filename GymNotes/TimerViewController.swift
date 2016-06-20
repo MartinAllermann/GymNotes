@@ -7,19 +7,43 @@
 //
 
 import UIKit
+import CoreData
 
-class TimerViewController: UIViewController {
+class TimerViewController: UIViewController, NSFetchedResultsControllerDelegate {
     
     var wodName: String?
     var timer : NSTimer?
     var startTime : NSTimeInterval?
     var accumulatedTime = NSTimeInterval()
     var startStopWatch: Bool = true
+    var previousTimeIsEmpty: Bool = true
     
     @IBOutlet weak var previousTime: UILabel!
     @IBOutlet weak var currentTime: UILabel!
     @IBOutlet weak var reset: UIButton!
     @IBOutlet weak var startAndStop: UIButton!
+    
+    @IBAction func saveBtn(sender: AnyObject) {
+        
+        if previousTimeIsEmpty == true {
+            
+            saveTime()
+        
+        } else if previousTimeIsEmpty == false {
+            
+            updateSavedTime()
+        
+        }
+        
+    dismissVC()
+        
+    }
+    
+    // Go back on "save"
+    func dismissVC(){
+        navigationController?.popViewControllerAnimated(true)
+        
+    }
     
     @IBAction func resetBtn(sender: AnyObject) {
         
@@ -28,7 +52,6 @@ class TimerViewController: UIViewController {
         startTime = nil
         accumulatedTime = 0
         currentTime.text = "00:00.00"
-        
         
         startStopWatch = true
         startAndStop.setTitle("Start", forState: UIControlState.Normal)
@@ -77,6 +100,7 @@ class TimerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        getPreviousTime()
 
         // Do any additional setup after loading the view.
     }
@@ -109,6 +133,76 @@ class TimerViewController: UIViewController {
         
     }
     
+    func getPreviousTime() {
+        let appDel: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+        let con: NSManagedObjectContext = appDel.managedObjectContext
+        
+        let request = NSFetchRequest(entityName: "Wod")
+        request.predicate = NSPredicate(format: "name = %@", wodName!)
+        request.returnsObjectsAsFaults = false
+        
+        do {
+            
+            let results = try con.executeFetchRequest(request) as! [Wod]
+            
+            for res in results {
+                previousTime.text = res.time
+                previousTimeIsEmpty = false
+                
+            }
+            
+        } catch {
+            print("Unresolved error")
+            abort()
+        }
+    }
+    
+    func saveTime(){
+        
+        let context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+        
+        let ent = NSEntityDescription.entityForName("Wod", inManagedObjectContext: context)
+        let eWod = Wod(entity: ent!, insertIntoManagedObjectContext: context)
+        
+        eWod.name = wodName
+        eWod.time = currentTime.text
+        
+        do {
+            
+            try context.save()
+            getPreviousTime()
+            dismissVC()
+        } catch {
+            return
+        }
+    
+    }
+    
+    func updateSavedTime(){
+        
+        let appDel: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+        let context: NSManagedObjectContext = appDel.managedObjectContext
+        
+        let request = NSFetchRequest(entityName: "Wod")
+        request.predicate = NSPredicate(format: "name = %@", wodName!)
+        
+        if let fetchResults = (try? appDel.managedObjectContext.executeFetchRequest(request)) as? [NSManagedObject] {
+            if fetchResults.count != 0{
+                
+                let managedObject = fetchResults[0]
+                managedObject.setValue(currentTime.text, forKey: "time")
+                
+                do {
+                    try context.save()
+                    getPreviousTime()
+                    dismissVC()
+                } catch {
+                    return
+                }
+            }
+        }
+    
+    }
     
 
 }

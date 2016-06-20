@@ -460,7 +460,7 @@
             </objects>
             <point key="canvasLocation" x="2169.5" y="646.5"/>
         </scene>
-        <!--Timer View Controller-->
+        <!--Title-->
         <scene sceneID="llO-K1-AU6">
             <objects>
                 <viewController storyboardIdentifier="1020" useStoryboardIdentifierAsRestorationIdentifier="YES" id="H4a-dT-nQb" customClass="TimerViewController" customModule="GymNotes" customModuleProvider="target" sceneMemberID="viewController">
@@ -529,6 +529,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="r0g-O3-a1Q">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="HMe-Fq-xST">
+                            <connections>
+                                <action selector="saveBtn:" destination="H4a-dT-nQb" id="PJI-ZY-hbu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="currentTime" destination="wZb-5c-jim" id="j5M-mH-AP1"/>
@@ -539,7 +546,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="53k-fu-9bu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2688.5" y="651.5"/>
+            <point key="canvasLocation" x="2673.5" y="670.5"/>
         </scene>
         <!--WODs-->
         <scene sceneID="T1R-uf-H4l">

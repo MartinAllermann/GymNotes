@@ -379,7 +379,7 @@
         <!--WODs-->
         <scene sceneID="UtC-KM-RVl">
             <objects>
-                <collectionViewController id="6lM-m2-Edq" customClass="WodsViewController" customModule="GymNotes" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="3000" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6lM-m2-Edq" customClass="WodsViewController" customModule="GymNotes" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="9hz-Vs-hkD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -431,7 +431,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AMRAP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eBg-9p-hFx">
                                             <rect key="frame" x="8" y="38" width="156.5" height="21"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -463,7 +463,7 @@
         <!--Timer View Controller-->
         <scene sceneID="llO-K1-AU6">
             <objects>
-                <viewController id="H4a-dT-nQb" customClass="TimerViewController" customModule="GymNotes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="1020" useStoryboardIdentifierAsRestorationIdentifier="YES" id="H4a-dT-nQb" customClass="TimerViewController" customModule="GymNotes" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VWK-jJ-NyE"/>
                         <viewControllerLayoutGuide type="bottom" id="fnH-gv-zen"/>
@@ -544,7 +544,7 @@
         <!--WODs-->
         <scene sceneID="T1R-uf-H4l">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bSm-H6-s4d" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="2000" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bSm-H6-s4d" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="WODs" id="0fb-s2-qUl"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Y3C-oy-6Lj">
@@ -563,7 +563,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="ds2-P8-kLT">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="GbZ-fv-BSo" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="1000" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GbZ-fv-BSo" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="c7E-N0-W46">

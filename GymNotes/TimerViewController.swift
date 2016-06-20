@@ -23,24 +23,28 @@ class TimerViewController: UIViewController {
     
     @IBAction func resetBtn(sender: AnyObject) {
         
-        guard self.timer != nil else {
-            return
-        }
+        timer?.invalidate()
         
-        /*
-        let timeString = String(format:"%02d:%02d.%02d",00,00,00)
-        currentTime.text = timeString
-         */
+        startTime = nil
+        accumulatedTime = 0
+        currentTime.text = "00:00.00"
         
-        self.timer!.invalidate()
-        self.timer = nil
         
         startStopWatch = true
         startAndStop.setTitle("Start", forState: UIControlState.Normal)
         startAndStop.backgroundColor = UIColor(hue: 0.4583, saturation: 0.7, brightness: 0.73, alpha: 1.0)
         
+        /*
+                guard self.timer != nil else {
+            return
+        }
+ 
+        self.timer = nil
+ 
+        */
         
     }
+    
 
     @IBAction func startBtn(sender: AnyObject) {
         
@@ -62,7 +66,7 @@ class TimerViewController: UIViewController {
             
             self.timer!.invalidate()
             self.timer = nil
-        
+
             startStopWatch = true
             startAndStop.setTitle("Start", forState: UIControlState.Normal)
             startAndStop.backgroundColor = UIColor(hue: 0.4583, saturation: 0.7, brightness: 0.73, alpha: 1.0)
@@ -104,6 +108,7 @@ class TimerViewController: UIViewController {
         currentTime.text = timeString
         
     }
+    
     
 
 }

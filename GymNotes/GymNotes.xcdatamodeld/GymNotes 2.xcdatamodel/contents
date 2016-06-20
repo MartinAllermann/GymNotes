@@ -13,6 +13,10 @@
         <attribute name="exerciseWeight" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="exerciseWorkoutName" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Wod" representedClassName=".Wod" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Workout" representedClassName=".Workout" syncable="YES">
         <attribute name="workoutColorTag" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="workoutDate" optional="YES" attributeType="Date" syncable="YES"/>
@@ -22,5 +26,6 @@
         <element name="Exercise" positionX="-36" positionY="9" width="128" height="90"/>
         <element name="ExerciseSet" positionX="-54" positionY="-9" width="128" height="135"/>
         <element name="Workout" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="Wod" positionX="-36" positionY="45" width="128" height="75"/>
     </elements>
 </model>

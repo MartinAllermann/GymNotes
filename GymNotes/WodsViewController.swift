@@ -71,10 +71,15 @@ class WodsViewController: UICollectionViewController  {
             let indexPaths = self.collectionView!.indexPathsForSelectedItems()!
             let indexPath = indexPaths[0] as NSIndexPath
             
-            let vc = segue.destinationViewController as! TimerViewController
+            let vc = segue.destinationViewController as! wodDescriptionViewController
             
-            vc.title = wodNames[indexPath.row]
             vc.wodName = wodNames[indexPath.row]
+            vc.wodType = wodStyle[indexPath.row]
+            vc.exerciseOne = exOne[indexPath.row]
+            vc.exerciseTwo = exTwo[indexPath.row]
+            vc.exerciseThree = exThree[indexPath.row]
+            vc.exerciseFour = exFour[indexPath.row]
+            vc.color = collectionColor[indexPath.row]
             
         }
     }

@@ -35,7 +35,6 @@ class TimerViewController: UIViewController, NSFetchedResultsControllerDelegate 
         
         }
         
-    dismissVC()
         
     }
     

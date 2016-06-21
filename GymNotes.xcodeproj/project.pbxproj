@@ -29,6 +29,7 @@
 		5B64D3931D13347D00A273CB /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B64D3921D13347D00A273CB /* TimerViewController.swift */; };
 		5B65A1F31CEB785200FBFCA6 /* ExerciseSetsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B65A1F21CEB785200FBFCA6 /* ExerciseSetsTableViewController.swift */; };
 		5B65A1F51CEB786E00FBFCA6 /* ExerciseSetsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B65A1F41CEB786E00FBFCA6 /* ExerciseSetsTableViewCell.swift */; };
+		5B86A3621D19B9E7003A73F5 /* wodDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B86A3611D19B9E7003A73F5 /* wodDescriptionViewController.swift */; };
 		5BE8D0361D187207009D9EA6 /* Wod+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE8D0341D187207009D9EA6 /* Wod+CoreDataProperties.swift */; };
 		5BE8D0371D187207009D9EA6 /* Wod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE8D0351D187207009D9EA6 /* Wod.swift */; };
 /* End PBXBuildFile section */
@@ -58,6 +59,7 @@
 		5B64D3921D13347D00A273CB /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		5B65A1F21CEB785200FBFCA6 /* ExerciseSetsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseSetsTableViewController.swift; sourceTree = "<group>"; };
 		5B65A1F41CEB786E00FBFCA6 /* ExerciseSetsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseSetsTableViewCell.swift; sourceTree = "<group>"; };
+		5B86A3611D19B9E7003A73F5 /* wodDescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = wodDescriptionViewController.swift; sourceTree = "<group>"; };
 		5BE8D0331D1870A6009D9EA6 /* GymNotes 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "GymNotes 2.xcdatamodel"; sourceTree = "<group>"; };
 		5BE8D0341D187207009D9EA6 /* Wod+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Wod+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5BE8D0351D187207009D9EA6 /* Wod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wod.swift; sourceTree = "<group>"; };
@@ -116,8 +118,9 @@
 				5B65A1F21CEB785200FBFCA6 /* ExerciseSetsTableViewController.swift */,
 				5B65A1F41CEB786E00FBFCA6 /* ExerciseSetsTableViewCell.swift */,
 				5B64D38E1D131CCB00A273CB /* WodsViewController.swift */,
-				5B64D3901D1327B100A273CB /* WodCollectionViewCell.swift */,
+				5B86A3611D19B9E7003A73F5 /* wodDescriptionViewController.swift */,
 				5B64D3921D13347D00A273CB /* TimerViewController.swift */,
+				5B64D3901D1327B100A273CB /* WodCollectionViewCell.swift */,
 			);
 			path = GymNotes;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 				5B03D0161CEA4C5000C68DC0 /* Exercise+CoreDataProperties.swift in Sources */,
 				5B03CFFC1CEA43A200C68DC0 /* AppDelegate.swift in Sources */,
 				5B65A1F31CEB785200FBFCA6 /* ExerciseSetsTableViewController.swift in Sources */,
+				5B86A3621D19B9E7003A73F5 /* wodDescriptionViewController.swift in Sources */,
 				5B03D0211CEA516C00C68DC0 /* workoutsTableViewCell.swift in Sources */,
 				5B03D01F1CEA50CE00C68DC0 /* WorkoutsTableViewController.swift in Sources */,
 				5B03D01A1CEA4C5000C68DC0 /* ExerciseSet+CoreDataProperties.swift in Sources */,

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GymNotes/TimerViewController.swift"
-            timestampString = "488143407.67513"
+            timestampString = "488225810.457308"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "resetBtn(_:)"
             landmarkType = "5">
          </BreakpointContent>

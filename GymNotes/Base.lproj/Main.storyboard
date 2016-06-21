@@ -8,7 +8,7 @@
         <!--Add Workout-->
         <scene sceneID="AHJ-F8-KvA">
             <objects>
-                <tableViewController id="QqK-hB-46D" customClass="AddWorkoutTableViewController" customModule="GymNotes" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController hidesBottomBarWhenPushed="YES" id="QqK-hB-46D" customClass="AddWorkoutTableViewController" customModule="GymNotes" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="x9U-RZ-9Xa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -133,7 +133,7 @@
         <!--Add Exercise-->
         <scene sceneID="MSw-fB-bGA">
             <objects>
-                <tableViewController id="4zr-F1-koE" customClass="AddExerciseTableViewController" customModule="GymNotes" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController hidesBottomBarWhenPushed="YES" id="4zr-F1-koE" customClass="AddExerciseTableViewController" customModule="GymNotes" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="pQa-JZ-I3m">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -240,7 +240,7 @@
         <!--Exercises Table View Controller-->
         <scene sceneID="UKy-eR-5HB">
             <objects>
-                <tableViewController id="2H8-ZY-h74" customClass="ExercisesTableViewController" customModule="GymNotes" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController hidesBottomBarWhenPushed="YES" id="2H8-ZY-h74" customClass="ExercisesTableViewController" customModule="GymNotes" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="66" sectionHeaderHeight="18" sectionFooterHeight="18" id="2aW-5g-vA5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -289,7 +289,7 @@
         <!--Exercise Sets Table View Controller-->
         <scene sceneID="Zig-g8-jIL">
             <objects>
-                <tableViewController id="opX-Pc-VD8" customClass="ExerciseSetsTableViewController" customModule="GymNotes" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController hidesBottomBarWhenPushed="YES" id="opX-Pc-VD8" customClass="ExerciseSetsTableViewController" customModule="GymNotes" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="63" sectionHeaderHeight="18" sectionFooterHeight="18" id="jaf-IP-ycf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -355,11 +355,11 @@
             </objects>
             <point key="canvasLocation" x="2412.5" y="-389.5"/>
         </scene>
-        <!--Workout Routines-->
+        <!--WORKOUT ROUTINES-->
         <scene sceneID="JxF-mS-Eod">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="I9l-0A-4gz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Workout Routines" id="GYY-iI-qA4"/>
+                    <tabBarItem key="tabBarItem" title="WORKOUT ROUTINES" image="bell@1" selectedImage="bell@1" id="GYY-iI-qA4"/>
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -376,7 +376,7 @@
             </objects>
             <point key="canvasLocation" x="934" y="-389"/>
         </scene>
-        <!--WODs-->
+        <!--WOD-->
         <scene sceneID="UtC-KM-RVl">
             <objects>
                 <collectionViewController storyboardIdentifier="3000" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6lM-m2-Edq" customClass="WodsViewController" customModule="GymNotes" customModuleProvider="target" sceneMemberID="viewController">
@@ -454,7 +454,7 @@
                             <outlet property="delegate" destination="6lM-m2-Edq" id="G7f-Z4-pXu"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="WODs" id="C5j-IQ-ajG"/>
+                    <navigationItem key="navigationItem" title="WOD" id="C5j-IQ-ajG"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qqs-Tw-qE5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -463,7 +463,7 @@
         <!--Title-->
         <scene sceneID="llO-K1-AU6">
             <objects>
-                <viewController storyboardIdentifier="1020" useStoryboardIdentifierAsRestorationIdentifier="YES" id="H4a-dT-nQb" customClass="TimerViewController" customModule="GymNotes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="1020" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="H4a-dT-nQb" customClass="TimerViewController" customModule="GymNotes" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VWK-jJ-NyE"/>
                         <viewControllerLayoutGuide type="bottom" id="fnH-gv-zen"/>
@@ -473,26 +473,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHY-Os-4Vp">
-                                <rect key="frame" x="0.0" y="64" width="381" height="159"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="139"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wZb-5c-jim">
-                                <rect key="frame" x="20" y="222" width="335" height="190"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="70"/>
+                                <rect key="frame" x="0.0" y="202" width="375" height="210"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="80"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PREVIOUS TIME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEs-Kz-k7z">
-                                <rect key="frame" x="0.0" y="91" width="375" height="21"/>
+                                <rect key="frame" x="0.0" y="84" width="375" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CURRENT TIME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T32-fi-hnR">
-                                <rect key="frame" x="0.0" y="247" width="375" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -501,7 +495,7 @@
                                 <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HhD-vJ-h6r">
-                                <rect key="frame" x="0.0" y="222" width="375" height="1"/>
+                                <rect key="frame" x="3" y="202" width="375" height="1"/>
                                 <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ITo-rw-myl">
@@ -526,6 +520,12 @@
                                     <action selector="startBtn:" destination="H4a-dT-nQb" eventType="touchUpInside" id="aLB-C9-XA7"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CURRENT TIME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T32-fi-hnR">
+                                <rect key="frame" x="0.0" y="227" width="375" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -548,11 +548,11 @@
             </objects>
             <point key="canvasLocation" x="2673.5" y="670.5"/>
         </scene>
-        <!--WODs-->
+        <!--WOD-->
         <scene sceneID="T1R-uf-H4l">
             <objects>
                 <navigationController storyboardIdentifier="2000" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bSm-H6-s4d" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="WODs" id="0fb-s2-qUl"/>
+                    <tabBarItem key="tabBarItem" title="WOD" image="kettlebell@1" selectedImage="kettlebell@1" id="0fb-s2-qUl"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Y3C-oy-6Lj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -573,9 +573,17 @@
                 <tabBarController storyboardIdentifier="1000" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GbZ-fv-BSo" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="c7E-N0-W46">
+                    <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" id="c7E-N0-W46">
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.91372549020000005" green="0.3411764706" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="0.91372549020000005" green="0.3411764706" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.9137254901960784" green="0.3411764705882353" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="bSm-H6-s4d" kind="relationship" relationship="viewControllers" id="cY6-Ao-7Qj"/>
@@ -587,5 +595,9 @@
             <point key="canvasLocation" x="1225.5" y="646.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bell@1" width="25" height="25"/>
+        <image name="kettlebell@1" width="25" height="25"/>
+    </resources>
     <color key="tintColor" red="0.9137254901960784" green="0.3411764705882353" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
 </document>

@@ -33,11 +33,18 @@ class wodDescriptionViewController: UIViewController{
     
     @IBOutlet weak var exerciseFourLabel: UILabel!
 
+    @IBOutlet weak var backBtn: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+            
+        /*
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.translucent = true
+ */
         
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         
@@ -57,11 +64,7 @@ class wodDescriptionViewController: UIViewController{
         } else if color == "Red" {
             backgroundColor.backgroundColor  =  UIColor(hue: 0.9833, saturation: 0.68, brightness: 0.85, alpha: 1.0)
         }
-        
-        
-        
-        
-        
+
 
         // Do any additional setup after loading the view.
     }

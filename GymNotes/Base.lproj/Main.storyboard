@@ -580,10 +580,20 @@
                                     <action selector="startTimerBtn:" destination="3tR-mF-tYO" eventType="touchUpInside" id="4z2-Ga-QcC"/>
                                 </connections>
                             </button>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" countDownDuration="1" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="apY-Pg-83z">
+                                <rect key="frame" x="0.0" y="377" width="375" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="-409712399.778337">
+                                    <!--1988-01-07 23:00:00 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="datePicker:" destination="3tR-mF-tYO" eventType="valueChanged" id="yEy-k9-jQg"/>
+                                </connections>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="datepickerDate" destination="apY-Pg-83z" id="GSY-VX-d9l"/>
                         <outlet property="startTimerLabel" destination="L4G-g0-v43" id="9cv-gT-YkO"/>
                         <outlet property="timeLeftLabel" destination="XJP-9N-m2x" id="47H-GU-jkp"/>
                     </connections>

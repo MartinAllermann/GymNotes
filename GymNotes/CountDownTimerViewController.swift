@@ -16,12 +16,16 @@ class CountDownTimerViewController: UIViewController {
     
     var newDate = NSDate()
     var timer : NSTimer?
+    var hour = 0
+    var minute = 1
     var startTimer: Bool = true
    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,9 +34,22 @@ class CountDownTimerViewController: UIViewController {
     }
     
     
+    @IBOutlet weak var datepickerDate: UIDatePicker!
+    
+    @IBAction func datePicker(sender: AnyObject) {
+        let calendar = NSCalendar.currentCalendar()
+        let dateComponents = calendar.components([NSCalendarUnit.Day, NSCalendarUnit.Month, NSCalendarUnit.Year, NSCalendarUnit.WeekOfYear, NSCalendarUnit.Hour, NSCalendarUnit.Minute, NSCalendarUnit.Second, NSCalendarUnit.Nanosecond], fromDate: datepickerDate.date)
+        hour = dateComponents.hour
+        minute = dateComponents.minute
+        print(datepickerDate.date)
+    }
+    
+ 
+    
     @IBAction func startTimerBtn(sender: AnyObject) {
         
         if startTimer == true {
+
             
             let currentDate = NSDate()
             let calendar = NSCalendar.currentCalendar()
@@ -43,9 +60,9 @@ class CountDownTimerViewController: UIViewController {
             components.month = dateComponents.month
             components.day = dateComponents.day
             components.weekOfYear = dateComponents.weekOfYear
-            components.hour = dateComponents.hour
-            components.minute = dateComponents.minute
-            components.second = dateComponents.second + 5
+            components.hour = dateComponents.hour + hour
+            components.minute = dateComponents.minute + minute
+            components.second = dateComponents.second
             newDate = calendar.dateFromComponents(components)!
             
             print(currentDate)
@@ -64,6 +81,7 @@ class CountDownTimerViewController: UIViewController {
             timer?.invalidate()
             startTimerLabel.setTitle("Start", forState: UIControlState.Normal)
             startTimer = true
+            timeLeftLabel.text = "00:00:00"
         }
         
     }

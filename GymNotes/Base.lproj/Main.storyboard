@@ -527,6 +527,17 @@
                                     <segue destination="H4a-dT-nQb" kind="show" identifier="showStopwatch" id="RBP-hM-5ND"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HH4-e6-VBg">
+                                <rect key="frame" x="20" y="436" width="335" height="66"/>
+                                <color key="backgroundColor" red="0.30588235289999999" green="0.30588235289999999" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="Countdown Timer">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="3tR-mF-tYO" kind="show" id="H6n-WA-TYm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -543,6 +554,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RBA-iN-8vW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2657.5" y="646.5"/>
+        </scene>
+        <!--Count Down Timer View Controller-->
+        <scene sceneID="Y3S-nh-vT5">
+            <objects>
+                <viewController id="3tR-mF-tYO" customClass="CountDownTimerViewController" customModule="GymNotes" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MxC-j4-MQe"/>
+                        <viewControllerLayoutGuide type="bottom" id="1AY-Ha-5XU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="u5A-0X-YpV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Timer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XJP-9N-m2x">
+                                <rect key="frame" x="137" y="148" width="137" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L4G-g0-v43">
+                                <rect key="frame" x="142" y="249" width="34" height="30"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="startTimerBtn:" destination="3tR-mF-tYO" eventType="touchUpInside" id="4z2-Ga-QcC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="startTimerLabel" destination="L4G-g0-v43" id="9cv-gT-YkO"/>
+                        <outlet property="timeLeftLabel" destination="XJP-9N-m2x" id="47H-GU-jkp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="48J-9r-pfO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3146.5" y="1054.5"/>
         </scene>
         <!--Title-->
         <scene sceneID="llO-K1-AU6">
@@ -630,7 +678,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="53k-fu-9bu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3112.5" y="646.5"/>
+            <point key="canvasLocation" x="3146.5" y="308.5"/>
         </scene>
         <!--WOD-->
         <scene sceneID="T1R-uf-H4l">

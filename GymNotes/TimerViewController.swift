@@ -75,7 +75,7 @@ class TimerViewController: UIViewController, NSFetchedResultsControllerDelegate 
             
             self.startTime = NSDate.timeIntervalSinceReferenceDate()
             
-            self.timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: #selector(TimerViewController.updateTime), userInfo: nil, repeats: true)
+            self.timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: #selector(TimerViewController.updateTime), userInfo: nil, repeats: true)
             
             startStopWatch = false
             startAndStop.setTitle("Stop", forState: UIControlState.Normal)
@@ -129,6 +129,7 @@ class TimerViewController: UIViewController, NSFetchedResultsControllerDelegate 
         
         let timeString = String(format:"%02d:%02d.%02d",minutes,seconds,fraction)
         currentTime.text = timeString
+        print(timeString)
         
     }
     

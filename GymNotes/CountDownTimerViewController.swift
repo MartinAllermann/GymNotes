@@ -23,8 +23,7 @@ class CountDownTimerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        datepickerDate.setValue(UIColor.whiteColor(), forKeyPath: "textColor")
+        datepickerDate.backgroundColor = UIColor.whiteColor()
         datepickerDate.datePickerMode = .CountDownTimer
         datepickerDate.hidden = false
         timeLeftLabel.hidden = true

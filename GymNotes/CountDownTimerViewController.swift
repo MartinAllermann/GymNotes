@@ -37,11 +37,18 @@ class CountDownTimerViewController: UIViewController {
     @IBOutlet weak var datepickerDate: UIDatePicker!
     
     @IBAction func datePicker(sender: AnyObject) {
+        
+      
+    }
+    
+    func setTimeFromDatePicker() {
+        
         let calendar = NSCalendar.currentCalendar()
         let dateComponents = calendar.components([NSCalendarUnit.Day, NSCalendarUnit.Month, NSCalendarUnit.Year, NSCalendarUnit.WeekOfYear, NSCalendarUnit.Hour, NSCalendarUnit.Minute, NSCalendarUnit.Second, NSCalendarUnit.Nanosecond], fromDate: datepickerDate.date)
         hour = dateComponents.hour
         minute = dateComponents.minute
         print(datepickerDate.date)
+    
     }
     
  
@@ -50,6 +57,7 @@ class CountDownTimerViewController: UIViewController {
         
         if startTimer == true {
 
+            setTimeFromDatePicker()
             
             let currentDate = NSDate()
             let calendar = NSCalendar.currentCalendar()

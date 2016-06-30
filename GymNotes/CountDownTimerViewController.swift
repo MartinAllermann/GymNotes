@@ -11,25 +11,32 @@ import UIKit
 class CountDownTimerViewController: UIViewController {
 
     @IBOutlet weak var timeLeftLabel: UILabel!
+   
     @IBOutlet weak var startTimerLabel: UIButton!
     
+    @IBOutlet weak var roundCountBtn: UIButton!
     
     var newDate = NSDate()
     var timer : NSTimer?
     var hour = 0
     var minute = 1
     var startTimer: Bool = true
+    var roundCount = 0
    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         datepickerDate.backgroundColor = UIColor.whiteColor()
-        datepickerDate.datePickerMode = .CountDownTimer
         datepickerDate.hidden = false
         timeLeftLabel.hidden = true
         
         
     }
+    @IBAction func roundCountBtn(sender: AnyObject) {
+        roundCount += 1
+        roundCountBtn.setTitle("\(roundCount)", forState: UIControlState.Normal)
+    }
+   
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

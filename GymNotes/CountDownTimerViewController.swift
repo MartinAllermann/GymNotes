@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreData
 
-class CountDownTimerViewController: UIViewController {
+class CountDownTimerViewController: UIViewController, NSFetchedResultsControllerDelegate  {
 
     @IBOutlet weak var timeLeftLabel: UILabel!
    
@@ -16,12 +17,17 @@ class CountDownTimerViewController: UIViewController {
     
     @IBOutlet weak var roundCountBtn: UIButton!
     
+    @IBOutlet weak var saveBtnLabel: UIBarButtonItem!
+    
+    @IBOutlet weak var highscoreLabel: UILabel!
+    var wodName: String?
     var newDate = NSDate()
     var timer : NSTimer?
     var hour = 0
     var minute = 1
     var startTimer: Bool = true
     var roundCount = 0
+    var previousRoundsIsEmpty: Bool = true
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,12 +35,33 @@ class CountDownTimerViewController: UIViewController {
         datepickerDate.backgroundColor = UIColor.whiteColor()
         datepickerDate.hidden = false
         timeLeftLabel.hidden = true
+        getPreviousTime()
         
         
     }
+    
+    
+
+    
+    @IBAction func saveBtn(sender: AnyObject) {
+        
+        if previousRoundsIsEmpty == true {
+            
+            saveTime()
+            
+        } else if previousRoundsIsEmpty == false {
+            
+            updateSavedTime()
+            
+        }
+        
+    }
+    
+    
     @IBAction func roundCountBtn(sender: AnyObject) {
         roundCount += 1
         roundCountBtn.setTitle("\(roundCount)", forState: UIControlState.Normal)
+        roundCountBtn.titleLabel?.font =  UIFont(name: "Helvetica", size: 40)
     }
    
 
@@ -136,6 +163,84 @@ class CountDownTimerViewController: UIViewController {
         
         }
 
+    }
+    
+    func saveTime(){
+        
+        let context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+        
+        let ent = NSEntityDescription.entityForName("Counter", inManagedObjectContext: context)
+        let eWod = Counter(entity: ent!, insertIntoManagedObjectContext: context)
+        
+        eWod.name = wodName
+        eWod.rounds = "\(roundCount)"
+        
+        do {
+            
+            try context.save()
+            getPreviousTime()
+            dismissVC()
+        } catch {
+            return
+        }
+        
+    }
+    
+    
+    func getPreviousTime() {
+        let appDel: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+        let con: NSManagedObjectContext = appDel.managedObjectContext
+        
+        let request = NSFetchRequest(entityName: "Counter")
+        request.predicate = NSPredicate(format: "name = %@", wodName!)
+        request.returnsObjectsAsFaults = false
+        
+        do {
+            
+            let results = try con.executeFetchRequest(request) as! [Counter]
+            
+            for res in results {
+                highscoreLabel.text = "Highscore: " + "\(res.rounds!)"
+                previousRoundsIsEmpty = false
+                
+            }
+            
+        } catch {
+            print("Unresolved error")
+            abort()
+        }
+    }
+    
+    func updateSavedTime(){
+        
+        let appDel: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+        let context: NSManagedObjectContext = appDel.managedObjectContext
+        
+        let request = NSFetchRequest(entityName: "Counter")
+        request.predicate = NSPredicate(format: "name = %@", wodName!)
+        
+        if let fetchResults = (try? appDel.managedObjectContext.executeFetchRequest(request)) as? [NSManagedObject] {
+            if fetchResults.count != 0{
+                
+                let managedObject = fetchResults[0]
+                managedObject.setValue("\(roundCount)", forKey: "rounds")
+                
+                do {
+                    try context.save()
+                    getPreviousTime()
+                    dismissVC()
+                } catch {
+                    return
+                }
+            }
+        }
+        
+    }
+    
+    // Go back on "save"
+    func dismissVC(){
+        navigationController?.popViewControllerAnimated(true)
+        
     }
 
 }

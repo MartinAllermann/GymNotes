@@ -18,7 +18,7 @@
                             <tableViewSection headerTitle="Workout Name" id="G6g-zt-56f">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="workoutNameCell" rowHeight="66" id="3kW-AX-AQj">
-                                        <rect key="frame" x="0.0" y="113.5" width="375" height="66"/>
+                                        <rect key="frame" x="0.0" y="49.5" width="375" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3kW-AX-AQj" id="WG8-o4-F5t">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="65.5"/>
@@ -40,7 +40,7 @@
                             <tableViewSection headerTitle="Color Tag" id="aTX-mp-LAa">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="workoutColorCell" id="svC-Rv-Lyl">
-                                        <rect key="frame" x="0.0" y="229.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="165.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="svC-Rv-Lyl" id="J05-Gw-v2j">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -58,7 +58,7 @@
                                         <color key="backgroundColor" red="0.30588235289999999" green="0.30588235289999999" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="workoutColorCell" id="IkC-TP-Jhc">
-                                        <rect key="frame" x="0.0" y="273.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="209.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IkC-TP-Jhc" id="ZCR-rV-ufz">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -76,7 +76,7 @@
                                         <color key="backgroundColor" red="0.30588235289999999" green="0.30588235289999999" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="workoutColorCell" id="hLd-0J-HyD">
-                                        <rect key="frame" x="0.0" y="317.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="253.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hLd-0J-HyD" id="uad-2j-xtF">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -94,7 +94,7 @@
                                         <color key="backgroundColor" red="0.30588235289999999" green="0.30588235289999999" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="workoutColorCell" id="vzB-I8-jI9">
-                                        <rect key="frame" x="0.0" y="361.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="297.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vzB-I8-jI9" id="Lte-VG-EA3">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -148,7 +148,7 @@
                             <tableViewSection headerTitle="Exercise Name" id="svh-7H-0Qf">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="66" id="Tlu-u7-Tbz">
-                                        <rect key="frame" x="0.0" y="113.5" width="375" height="66"/>
+                                        <rect key="frame" x="0.0" y="49.5" width="375" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tlu-u7-Tbz" id="Yf5-GP-AKC">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="65.5"/>
@@ -200,7 +200,7 @@
                         <color key="separatorColor" red="0.30588235289999999" green="0.30588235289999999" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="workoutCell" rowHeight="66" id="FaL-dt-1fg" customClass="workoutsTableViewCell" customModule="GymNotes" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="113.5" width="375" height="66"/>
+                                <rect key="frame" x="0.0" y="49.5" width="375" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FaL-dt-1fg" id="8WT-8V-OKr">
                                     <rect key="frame" x="0.0" y="0.0" width="342" height="65.5"/>
@@ -256,7 +256,7 @@
                         <color key="separatorColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="exerciseCell" rowHeight="66" id="pVI-k7-caE" customClass="ExerciseTableViewCell" customModule="GymNotes" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="113.5" width="375" height="66"/>
+                                <rect key="frame" x="0.0" y="49.5" width="375" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pVI-k7-caE" id="j03-iY-NWQ">
                                     <rect key="frame" x="0.0" y="0.0" width="342" height="65.5"/>
@@ -314,7 +314,7 @@
                         </button>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="exerciseSetCell" rowHeight="66" id="OsO-EG-ecm" customClass="ExerciseSetsTableViewCell" customModule="GymNotes" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="113.5" width="375" height="66"/>
+                                <rect key="frame" x="0.0" y="49.5" width="375" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OsO-EG-ecm" id="APb-TO-Rwb">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="65.5"/>
@@ -563,7 +563,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="3tR-mF-tYO" kind="push" id="H6n-WA-TYm"/>
+                                    <segue destination="3tR-mF-tYO" kind="push" identifier="showCountdownTimer" id="H6n-WA-TYm"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -631,7 +631,7 @@
                                 </connections>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hCh-rm-UFm">
-                                <rect key="frame" x="20" y="394" width="335" height="175"/>
+                                <rect key="frame" x="20" y="404" width="335" height="175"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.30588235289999999" green="0.30588235289999999" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
@@ -642,14 +642,30 @@
                                     <action selector="roundCountBtn:" destination="3tR-mF-tYO" eventType="touchUpInside" id="n8W-tB-KWu"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Highscore: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5S2-OZ-3y3">
+                                <rect key="frame" x="128" y="419" width="119" height="34.5"/>
+                                <autoresizingMask key="autoresizingMask" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="mx4-z0-Ceb"/>
+                    <navigationItem key="navigationItem" id="mx4-z0-Ceb">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Gns-nc-Ljd">
+                            <connections>
+                                <action selector="saveBtn:" destination="3tR-mF-tYO" id="IPq-Re-Imf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="datepickerDate" destination="apY-Pg-83z" id="GSY-VX-d9l"/>
+                        <outlet property="highscoreLabel" destination="5S2-OZ-3y3" id="bKS-E3-shN"/>
                         <outlet property="roundCountBtn" destination="hCh-rm-UFm" id="vDt-14-7eD"/>
+                        <outlet property="saveBtnLabel" destination="Gns-nc-Ljd" id="bKA-LS-RLX"/>
                         <outlet property="startTimerLabel" destination="L4G-g0-v43" id="9cv-gT-YkO"/>
                         <outlet property="timeLeftLabel" destination="XJP-9N-m2x" id="47H-GU-jkp"/>
                     </connections>

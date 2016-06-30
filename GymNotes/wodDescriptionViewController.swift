@@ -85,6 +85,19 @@ class wodDescriptionViewController: UIViewController{
             vc.wodName = wodName
             
         }
+        
+        if segue.identifier == "showCountdownTimer"
+        {
+            
+            let vc = segue.destinationViewController as! CountDownTimerViewController
+            
+            vc.title = wodName
+            vc.wodName = wodName
+            
+        }
     }
+    
+    
+    
 
 }

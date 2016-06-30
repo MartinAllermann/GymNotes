@@ -1,5 +1,5 @@
 //
-//  Wod+CoreDataProperties.swift
+//  Counter+CoreDataProperties.swift
 //  GymNotes
 //
 //  Created by Martin  on 30/06/16.
@@ -12,9 +12,9 @@
 import Foundation
 import CoreData
 
-extension Wod {
+extension Counter {
 
     @NSManaged var name: String?
-    @NSManaged var time: String?
+    @NSManaged var rounds: String?
 
 }

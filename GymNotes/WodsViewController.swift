@@ -25,12 +25,12 @@ class WodsViewController: UICollectionViewController  {
     let collectionColor = ["Green","Green","Green","Red","Red","Red","Red","Red","Red","Red","Orange","Orange","Orange","Orange","Orange","Blue","Blue","Blue","Blue","Blue","Blue","Blue"]
 
     
-    let wodStyleFullDescription = ["9-7-5","For Time","50-40-30-20-10","5 rounds for time","Every minute, on the minute for 30 min","3 rounds","AMRAP in 20 min","21-15-9","21-15-9 ","5 rounds","21-15-9","For Time","3 rounds","For Time","For Time","For Time","5 rounds","10/9/8/7/6/5/4/3/2/1 ","5 rounds","AMRAP in 20 min","5 rounds","AMRAP in 20 min"]
+    let wodStyleFullDescription = ["9-7-5 reps, for time","For Time","50-40-30-20-10","5 rounds for time","Every minute, on the minute for 30 min","3 rounds","As many rounds as possible in 20 min","21-15-9 reps, for time","21-15-9 reps, for time","5 rounds","21-15-9 reps, for time","For Time","3 rounds","For Time","For Time","For Time","5 rounds","10/9/8/7/6/5/4/3/2/1 ","5 rounds","As many rounds as possible in 20 min","5 rounds","As many rounds as possible in 20 min"]
     
     
-    let exOneDescription = ["Muscle Up","100 Pull-ups","Double-unders","20 Pull-ups","5 Pull-ups","500m row ","5 Pull-ups","Deadlift (225#)","Clean (135#)","800m run","Thruster (95#)","30 Clean and Jerks (135#)","400m run","30 Snatch","1000m row","150 Wall balls","400m run","Deadlift (1 1/2 BW)","Max reps Bench (BW)","5 Handstand push-ups","400m run","400m run"]
+    let exOneDescription = ["Muscle Up","100 Pull-ups","Double-unders","20 Pull-ups","5 Pull-ups","500m row ","5 Pull-ups","Deadlift (225 lbs)","Clean (135 lbs)","800m run","Thruster (95 lbs)","30 Clean and Jerks (135 lbs)","400m run","30 Snatch","1000m row","150 Wall balls","400m run","Deadlift (1 1/2 BW)","Max reps Bench (BW)","5 Handstand push-ups","400m run","400m run"]
     
-    let exTwoDescription = ["Squat Snatch (135# / 95#)","100 Push-ups","Sit-ups","30 Push-ups","10 Push-ups","12 Deadlift (BW)","10 Push-ups","Handstand push-ups","Ring Dips","30 kettlebell swings","Pull-ups","","21 Kettlebell Swings","","50 Thrusters (45#)","","30 box jump, 24 inch box","Bench (BW)","Max reps Pull-ups","10 single leg squats","15 Overhead squat (95#)","Max rep Pull-ups"]
+    let exTwoDescription = ["Squat Snatch (135 lbs)","100 Push-ups","Sit-ups","30 Push-ups","10 Push-ups","12 Deadlift (BW)","10 Push-ups","Handstand push-ups","Ring Dips","30 kettlebell swings","Pull-ups","","21 Kettlebell Swings","","50 Thrusters (45 lbs)","","30 box jump, 24 inch box","Bench (BW)","Max reps Pull-ups","10 single leg squats","15 Overhead squat (95 lbs)","Max rep Pull-ups"]
     
     let exThreeDescription = ["","100 Sit-ups","","40 Sit-ups","15 Air Squats","21 Box Jumps","15 Air Squats","","","30 pullups","","","12 Pull-ups","","30 Pull-ups","","30 Wall ball shots","Clean (3/4 BW)","","15 Pull-ups","",""]
     

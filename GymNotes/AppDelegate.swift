@@ -2,7 +2,7 @@
 //  AppDelegate.swift 1.0 
 //  GymNotes Commit
 //
-//  Created by Martin  on 16/05/16.
+//  Created by Martin Haun  on 16/05/16.
 //  Copyright © 2016 Martin . All rights reserved.
 //
 

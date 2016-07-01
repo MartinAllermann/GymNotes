@@ -20,6 +20,7 @@ class CountDownTimerViewController: UIViewController, NSFetchedResultsController
     @IBOutlet weak var saveBtnLabel: UIBarButtonItem!
     
     @IBOutlet weak var highscoreLabel: UILabel!
+    
     var wodName: String?
     var newDate = NSDate()
     var timer : NSTimer?
@@ -29,6 +30,10 @@ class CountDownTimerViewController: UIViewController, NSFetchedResultsController
     var roundCount = 0
     var previousRoundsIsEmpty: Bool = true
    
+    @IBAction func cancelBtn(sender: AnyObject){
+        timer?.invalidate()
+        dismissVC()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -36,6 +41,8 @@ class CountDownTimerViewController: UIViewController, NSFetchedResultsController
         datepickerDate.hidden = false
         timeLeftLabel.hidden = true
         getPreviousTime()
+        
+        saveBtnLabel.enabled = false
         
         
     }
@@ -62,6 +69,7 @@ class CountDownTimerViewController: UIViewController, NSFetchedResultsController
         roundCount += 1
         roundCountBtn.setTitle("\(roundCount)", forState: UIControlState.Normal)
         roundCountBtn.titleLabel?.font =  UIFont(name: "Helvetica", size: 40)
+        saveBtnLabel.enabled = true
     }
    
 

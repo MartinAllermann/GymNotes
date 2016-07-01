@@ -18,12 +18,21 @@ class TimerViewController: UIViewController, NSFetchedResultsControllerDelegate 
     var startStopWatch: Bool = true
     var previousTimeIsEmpty: Bool = true
     
+   
+    @IBOutlet weak var saveBtnLabel: UIBarButtonItem!
     @IBOutlet weak var previousTime: UILabel!
     @IBOutlet weak var currentTime: UILabel!
     @IBOutlet weak var reset: UIButton!
     @IBOutlet weak var startAndStop: UIButton!
     
+    @IBAction func cancelBtn(sender: AnyObject) {
+        timer?.invalidate()
+        dismissVC()
+    }
+    
     @IBAction func saveBtn(sender: AnyObject) {
+        
+        
         
         if previousTimeIsEmpty == true {
             
@@ -70,6 +79,8 @@ class TimerViewController: UIViewController, NSFetchedResultsControllerDelegate 
 
     @IBAction func startBtn(sender: AnyObject) {
         
+        saveBtnLabel.enabled = true
+        
         if startStopWatch == true {
             
             
@@ -100,6 +111,7 @@ class TimerViewController: UIViewController, NSFetchedResultsControllerDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         getPreviousTime()
+        saveBtnLabel.enabled = false
 
         // Do any additional setup after loading the view.
     }

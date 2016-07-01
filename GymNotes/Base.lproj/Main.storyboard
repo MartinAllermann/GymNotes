@@ -314,7 +314,7 @@
                         </button>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="exerciseSetCell" rowHeight="66" id="OsO-EG-ecm" customClass="ExerciseSetsTableViewCell" customModule="GymNotes" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="49.5" width="375" height="66"/>
+                                <rect key="frame" x="0.0" y="113.5" width="375" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OsO-EG-ecm" id="APb-TO-Rwb">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="65.5"/>
@@ -653,6 +653,11 @@
                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="mx4-z0-Ceb">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="vy6-Fk-1Ub">
+                            <connections>
+                                <action selector="cancelBtn:" destination="3tR-mF-tYO" id="Kgq-1p-Mw1"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Gns-nc-Ljd">
                             <connections>
                                 <action selector="saveBtn:" destination="3tR-mF-tYO" id="IPq-Re-Imf"/>
@@ -725,7 +730,7 @@
                                     <action selector="startBtn:" destination="H4a-dT-nQb" eventType="touchUpInside" id="aLB-C9-XA7"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CURRENT TIME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="T32-fi-hnR">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="T32-fi-hnR">
                                 <rect key="frame" x="20" y="231" width="335" height="21"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -748,6 +753,11 @@
                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="r0g-O3-a1Q">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="9qD-ny-1yz">
+                            <connections>
+                                <action selector="cancelBtn:" destination="H4a-dT-nQb" id="8vU-Bl-2xh"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="HMe-Fq-xST">
                             <connections>
                                 <action selector="saveBtn:" destination="H4a-dT-nQb" id="PJI-ZY-hbu"/>
@@ -760,6 +770,7 @@
                         <outlet property="currentTime" destination="wZb-5c-jim" id="j5M-mH-AP1"/>
                         <outlet property="previousTime" destination="CHY-Os-4Vp" id="WfT-Pc-suq"/>
                         <outlet property="reset" destination="ITo-rw-myl" id="ooC-Ll-U3W"/>
+                        <outlet property="saveBtnLabel" destination="HMe-Fq-xST" id="cVd-AL-COZ"/>
                         <outlet property="startAndStop" destination="ZZs-gZ-sIk" id="ADi-A5-7AE"/>
                     </connections>
                 </viewController>

@@ -9,10 +9,10 @@
 import UIKit
 import CoreData
 
-class CountDownTimerViewController: UIViewController, NSFetchedResultsControllerDelegate  {
-
+class CountDownTimerViewController: UIViewController, NSFetchedResultsControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource  {
+    
     @IBOutlet weak var timeLeftLabel: UILabel!
-   
+    
     @IBOutlet weak var startTimerLabel: UIButton!
     
     @IBOutlet weak var roundCountBtn: UIButton!
@@ -21,15 +21,22 @@ class CountDownTimerViewController: UIViewController, NSFetchedResultsController
     
     @IBOutlet weak var highscoreLabel: UILabel!
     
+    @IBOutlet weak var hourPicker: UIPickerView!
+
+    @IBOutlet weak var minutePicker: UIPickerView!
+    
     var wodName: String?
     var newDate = NSDate()
     var timer : NSTimer?
     var hour = 0
-    var minute = 1
+    var minute = 0
     var startTimer: Bool = true
     var roundCount = 0
     var previousRoundsIsEmpty: Bool = true
-   
+    var alertController: UIAlertController?
+    var hourArray = ["0","1","2","3","4","5","6","7","8","9","10","11","12"]
+    var minArray:[String] = []
+    
     @IBAction func cancelBtn(sender: AnyObject){
         timer?.invalidate()
         dismissVC()
@@ -37,18 +44,22 @@ class CountDownTimerViewController: UIViewController, NSFetchedResultsController
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        datepickerDate.backgroundColor = UIColor.whiteColor()
-        datepickerDate.hidden = false
         timeLeftLabel.hidden = true
         getPreviousTime()
         
         saveBtnLabel.enabled = false
+        hourPicker.delegate = self
+        hourPicker.dataSource = self
         
+        //Populate array with 59 minutes
+        for i in 0...59 {
+            minArray.append("\(i)")
+        }
         
     }
     
     
-
+    
     
     @IBAction func saveBtn(sender: AnyObject) {
         
@@ -67,42 +78,73 @@ class CountDownTimerViewController: UIViewController, NSFetchedResultsController
     
     @IBAction func roundCountBtn(sender: AnyObject) {
         roundCount += 1
-        roundCountBtn.setTitle("\(roundCount)", forState: UIControlState.Normal)
+        roundCountBtn.setTitle("Rounds: \(roundCount)", forState: UIControlState.Normal)
         roundCountBtn.titleLabel?.font =  UIFont(name: "Helvetica", size: 40)
         saveBtnLabel.enabled = true
     }
-   
-
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        if (pickerView.tag == 1){
+            return hourArray[row] + " h"
+        }else{
+            return minArray[row] + " min"
+        }
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        
+        if (pickerView.tag == 1){
+            return hourArray.count
+        }else{
+            return minArray.count
+        }
+    }
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if (pickerView.tag == 1){
+            hour = row
+        }else{
+            minute = row
+        }
+    }
+    
+    func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        
+        
+        if (pickerView.tag == 1){
+            let titleData = hourArray[row] + " h"
+            let myTitle = NSAttributedString(string: titleData, attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
+            
+            return myTitle
+        }else{
+            let titleData = minArray[row] + " m"
+            let myTitle = NSAttributedString(string: titleData, attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
+            
+            return myTitle
+        }
+        
+        
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     
-    @IBOutlet weak var datepickerDate: UIDatePicker!
     
-    @IBAction func datePicker(sender: AnyObject) {
-        
-      
-    }
-    
-    func setTimeFromDatePicker() {
-        
-        let calendar = NSCalendar.currentCalendar()
-        let dateComponents = calendar.components([NSCalendarUnit.Day, NSCalendarUnit.Month, NSCalendarUnit.Year, NSCalendarUnit.WeekOfYear, NSCalendarUnit.Hour, NSCalendarUnit.Minute, NSCalendarUnit.Second, NSCalendarUnit.Nanosecond], fromDate: datepickerDate.date)
-        hour = dateComponents.hour
-        minute = dateComponents.minute
-        print(datepickerDate.date)
-    
-    }
-    
- 
     
     @IBAction func startTimerBtn(sender: AnyObject) {
         
         if startTimer == true {
-
-            setTimeFromDatePicker()
+            
             
             let currentDate = NSDate()
             let calendar = NSCalendar.currentCalendar()
@@ -131,7 +173,8 @@ class CountDownTimerViewController: UIViewController, NSFetchedResultsController
             startTimer = false
             
             
-            datepickerDate.hidden = true
+            hourPicker.hidden = true
+            minutePicker.hidden = true
             timeLeftLabel.hidden = false
             
         } else if startTimer == false {
@@ -141,13 +184,14 @@ class CountDownTimerViewController: UIViewController, NSFetchedResultsController
             startTimerLabel.backgroundColor = UIColor(hue: 0.4583, saturation: 0.7, brightness: 0.73, alpha: 1.0)
             startTimer = true
             timeLeftLabel.text = "00:00:OO"
-            datepickerDate.hidden = false
+            hourPicker.hidden = false
+            minutePicker.hidden = false
             timeLeftLabel.hidden = true
             
         }
         
     }
-
+    
     func setTimeLeft() {
         
         let currentDate = NSDate()
@@ -156,21 +200,50 @@ class CountDownTimerViewController: UIViewController, NSFetchedResultsController
         print(components2.second)
         
         if (components2.second >= 0) {
-        
-        let timeString = String(format:"%02d:%02d:%02d",components2.hour,components2.minute,components2.second)
-        timeLeftLabel.text = timeString
+            
+            let timeString = String(format:"%02d:%02d:%02d",components2.hour,components2.minute,components2.second)
+            timeLeftLabel.text = timeString
             
         } else {
+            
+            timeIsUp()
+            
+        }
+        
+    }
+    
+    // Need commit
+    func timeIsUp(){
         
         timer?.invalidate()
         startTimerLabel.setTitle("Start", forState: UIControlState.Normal)
         startTimerLabel.backgroundColor = UIColor(hue: 0.4583, saturation: 0.7, brightness: 0.73, alpha: 1.0)
         startTimer = true
-        datepickerDate.hidden = false
+        
+        hourPicker.hidden = false
+        minutePicker.hidden = false
         timeLeftLabel.hidden = true
         
+        alert()
+        
+    }
+    
+    func alert(){
+        
+        //Construct alert view
+        alertController = UIAlertController(title: "Time is up", message: "", preferredStyle: .Alert)
+        
+        // add an action
+        
+        let alertAction = UIAlertAction(title: "Done", style: .Default) {
+            
+            (action) -> Void in
+            print("Done Btn")
+            
         }
-
+        alertController!.addAction(alertAction)
+        self.presentViewController(alertController!, animated: true, completion: nil)
+        
     }
     
     func saveTime(){
@@ -250,5 +323,5 @@ class CountDownTimerViewController: UIViewController, NSFetchedResultsController
         navigationController?.popViewControllerAnimated(true)
         
     }
-
+    
 }

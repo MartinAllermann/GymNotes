@@ -2,7 +2,7 @@
 //  CountDownTimerViewController.swift
 //  GymNotes
 //
-//  Created by Martin  on 25/06/16.
+//  Created by Martin   on 25/06/16.
 //  Copyright © 2016 Martin . All rights reserved.
 //
 

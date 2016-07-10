@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import CoreData
 
-class wodDescriptionViewController: UIViewController{
+class wodDescriptionViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate{
     
     
+    @IBOutlet weak var timerTableView: UITableView!
     var wodName: String?
     var wodType: String?
     var exerciseOne: String?
@@ -18,6 +20,11 @@ class wodDescriptionViewController: UIViewController{
     var exerciseThree: String?
     var exerciseFour: String?
     var color: String?
+    var timers: [String] = []
+    let cellIdentifier = "Cell"
+    var savedTimes: [String] = []
+    var forTime = "00:00:00"
+    var Amrap = "0 Rounds"
     
     @IBOutlet weak var backgroundColor: UIView!
     
@@ -35,11 +42,20 @@ class wodDescriptionViewController: UIViewController{
 
     @IBOutlet weak var backBtn: UIBarButtonItem!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        getPreviousTime()
+        getPreviousAmrap()
         
-            
+        timers = ["For Time", "AMRAP"]
+        savedTimes = [forTime, Amrap]
+       
+        
+        
+        
         /*
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
@@ -67,6 +83,18 @@ class wodDescriptionViewController: UIViewController{
 
 
         // Do any additional setup after loading the view.
+    }
+    
+    
+    override func viewDidAppear(animated: Bool) {
+        getPreviousTime()
+        getPreviousAmrap()
+        
+        timers = ["For Time", "AMRAP"]
+        savedTimes = [forTime, Amrap]
+        timerTableView.reloadData()
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -97,7 +125,86 @@ class wodDescriptionViewController: UIViewController{
         }
     }
     
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
     
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return timers.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
+        
+        // Fetch Fruit
+        let time = timers[indexPath.row]
+        let savedTime = savedTimes[indexPath.row]
+        
+        // Configure Cell
+        cell.textLabel?.text = time
+        cell.textLabel?.textColor = UIColor.whiteColor()
+        cell.detailTextLabel?.text = savedTime
+        cell.detailTextLabel?.textColor = UIColor.whiteColor()
+        
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.row == 0 {
+            self.performSegueWithIdentifier("showStopwatch", sender: indexPath);
+        } else {
+            self.performSegueWithIdentifier("showCountdownTimer", sender: indexPath);
+        }
+        
+    }
+    
+    func getPreviousTime() {
+        let appDel: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+        let con: NSManagedObjectContext = appDel.managedObjectContext
+        
+        let request = NSFetchRequest(entityName: "Wod")
+        request.predicate = NSPredicate(format: "name = %@", wodName!)
+        request.returnsObjectsAsFaults = false
+        
+        do {
+            
+            let results = try con.executeFetchRequest(request) as! [Wod]
+            
+            for res in results {
+                forTime = res.time!
+                
+            }
+            
+        } catch {
+            print("Unresolved error")
+            abort()
+        }
+    }
+    
+    func getPreviousAmrap() {
+        let appDel: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+        let con: NSManagedObjectContext = appDel.managedObjectContext
+        
+        let request = NSFetchRequest(entityName: "Counter")
+        request.predicate = NSPredicate(format: "name = %@", wodName!)
+        request.returnsObjectsAsFaults = false
+        
+        do {
+            
+            let results = try con.executeFetchRequest(request) as! [Counter]
+            
+            for res in results {
+                Amrap = "\(res.rounds!) " + "Rounds"
+            
+                
+            }
+            
+        } catch {
+            print("Unresolved error")
+            abort()
+        }
+    }
     
 
 }

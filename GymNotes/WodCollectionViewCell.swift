@@ -17,4 +17,5 @@ class WodCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var exerciseThree: UILabel!
     @IBOutlet weak var exerciseFour: UILabel!
     
+    
 }

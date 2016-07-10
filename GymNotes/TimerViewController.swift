@@ -17,10 +17,10 @@ class TimerViewController: UIViewController, NSFetchedResultsControllerDelegate 
     var accumulatedTime = NSTimeInterval()
     var startStopWatch: Bool = true
     var previousTimeIsEmpty: Bool = true
+    var previousTime: String?
     
    
     @IBOutlet weak var saveBtnLabel: UIBarButtonItem!
-    @IBOutlet weak var previousTime: UILabel!
     @IBOutlet weak var currentTime: UILabel!
     @IBOutlet weak var reset: UIButton!
     @IBOutlet weak var startAndStop: UIButton!
@@ -158,7 +158,7 @@ class TimerViewController: UIViewController, NSFetchedResultsControllerDelegate 
             let results = try con.executeFetchRequest(request) as! [Wod]
             
             for res in results {
-                previousTime.text = res.time
+                previousTime = res.time
                 previousTimeIsEmpty = false
                 
             }

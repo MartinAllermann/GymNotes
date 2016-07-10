@@ -19,8 +19,6 @@ class CountDownTimerViewController: UIViewController, NSFetchedResultsController
     
     @IBOutlet weak var saveBtnLabel: UIBarButtonItem!
     
-    @IBOutlet weak var highscoreLabel: UILabel!
-    
     @IBOutlet weak var hourPicker: UIPickerView!
 
     @IBOutlet weak var minutePicker: UIPickerView!
@@ -36,6 +34,7 @@ class CountDownTimerViewController: UIViewController, NSFetchedResultsController
     var alertController: UIAlertController?
     var hourArray = ["0","1","2","3","4","5","6","7","8","9","10","11","12"]
     var minArray:[String] = []
+    var highscore: String?
     
     @IBAction func cancelBtn(sender: AnyObject){
         timer?.invalidate()
@@ -78,8 +77,8 @@ class CountDownTimerViewController: UIViewController, NSFetchedResultsController
     
     @IBAction func roundCountBtn(sender: AnyObject) {
         roundCount += 1
-        roundCountBtn.setTitle("Rounds: \(roundCount)", forState: UIControlState.Normal)
-        roundCountBtn.titleLabel?.font =  UIFont(name: "Helvetica", size: 40)
+        roundCountBtn.setTitle("\(roundCount)", forState: UIControlState.Normal)
+        roundCountBtn.titleLabel?.font =  UIFont(name: "Helvetica", size: 60)
         saveBtnLabel.enabled = true
     }
     
@@ -281,7 +280,7 @@ class CountDownTimerViewController: UIViewController, NSFetchedResultsController
             let results = try con.executeFetchRequest(request) as! [Counter]
             
             for res in results {
-                highscoreLabel.text = "Highscore: " + "\(res.rounds!)"
+                highscore = "\(res.rounds!)"
                 previousRoundsIsEmpty = false
                 
             }

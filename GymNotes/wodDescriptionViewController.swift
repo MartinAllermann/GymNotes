@@ -144,8 +144,11 @@ class wodDescriptionViewController: UIViewController, UITableViewDataSource, UIT
         // Configure Cell
         cell.textLabel?.text = time
         cell.textLabel?.textColor = UIColor.whiteColor()
+        cell.textLabel?.font =  UIFont(name: "Helvetica", size: 17)
+        
         cell.detailTextLabel?.text = savedTime
-        cell.detailTextLabel?.textColor = UIColor.whiteColor()
+        cell.detailTextLabel?.textColor = UIColor.lightGrayColor()
+        cell.detailTextLabel?.font =  UIFont(name: "Helvetica", size: 14)
         
         return cell
     }

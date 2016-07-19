@@ -100,5 +100,29 @@ class WodsViewController: UICollectionViewController  {
             
         }
     }
+    
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        let size = collectionView.frame.width
+        print(size)
+        
+        if (size <= 320) {
+            print("iPhone 5")
+            return CGSize(width: (144.5), height: (144.5))
+            
+        }
+        if (size <= 375) {
+            print("iPhone 6")
+            return CGSize(width: (172.5), height: (172.5))
+        }
+        if (size <= 414) {
+            print("iPhone 6 plus")
+            return CGSize(width: (191.5), height: (191.5))
+        }
+        
+        
+        return CGSize(width: 172.5, height: 172.5)
+    }
+ 
 
 }
